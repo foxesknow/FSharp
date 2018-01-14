@@ -1,10 +1,10 @@
 ﻿// Learn more about F# at http://fsharp.org
 // See the 'F# Tutorial' project for more help.
 
-open Cosmo.String;
+open Cosmo;
+open FSharp.Core;
 
 [<EntryPoint>]
 let main argv = 
-    let greeting = [| "hello"; "world    "|] |> Join "," |> Trim
-    printfn "%A" greeting
+    [ "hello"; "world"] |> TextFile.WriteAllLines "f:\\code\\test.txt"
     0 // return an integer exit code
